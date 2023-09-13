@@ -1,0 +1,48 @@
+div{
+    width: 200px;
+    height: 200px;
+    background: red;
+    transition: width 2s, background 3s;
+    /*transition-delay: 3s;*/
+}
+
+div:hover{
+    width: 400px;
+    background: blue;
+}
+
+div.happy{
+    margin-top: 20px;
+    background: green;
+    transform: translate(50px, 100px) rotate(20deg);
+    scale:(2, 3);
+
+}
+div.happy:hover{
+    transform: rotate(90deg);
+}
+
+div.header{
+    background: blue;
+    height: 50px;
+    width: 1000px;
+    position: sticky;
+    top:0;
+}
+
+
+@keyframes example{
+    from {
+        background-color: red;}
+
+    to{
+        background-color: hotpink;}
+}
+
+.gap{
+    height: 2000px;
+    background: yellow;
+    /*animation-name: example;
+    animation-duration: 4s;*/
+    animation: example 4s;
+}
