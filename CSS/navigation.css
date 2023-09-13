@@ -1,0 +1,15 @@
+ul{
+    list-style-type: none;
+    margin: 9;
+    padding: 3;
+    background-color: gray;
+}
+
+li{
+float: left;
+border-right: 1px solid white;
+}
+
+li:last-child {
+    border-right: none;
+}
