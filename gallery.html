@@ -1,0 +1,26 @@
+<html>
+  <body>
+    <img id="myGallery" />
+    <button onclick="doSomethiing()">Prervious</button>
+    <button onclick="doSomethiing()">Next</button>
+
+    <script>
+      const images = ["pic1", "pic2", "pic3"];
+      let index = 0;
+      function doSomethiing{
+          const img = document.getElementById("myGallery");
+          img.src = 'images\${images[index]}.jpg';
+          if(isNext){
+              index += 1;
+          }
+          else{
+              index -= 1;
+          }
+
+          if(index > images.length - 1){
+
+          }
+      }
+    </script>
+  </body>
+</html>

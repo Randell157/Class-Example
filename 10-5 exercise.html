@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <style>
+      .checkbox1 {
+        font-size: 18px;
+        color: blue;
+      }
+      .checkbox2 {
+        background-color: red;
+        border: 1px solid black;
+        font-size: 36px;
+      }
+      .checkbox3 {
+        margin: 10px;
+        font-weight: bold;
+        color: green;
+        background-color: hotpink;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Use me as a text</h1>
+    <input type="checkbox" value="checkbox1" />Font-size of 18px and color
+    blue<br />
+    <input type="checkbox" value="checkbox2" />Background color of red and
+    border of 1px solid black and font-size of 36px<br />
+    <input type="checkbox" value="checkbox3" />Margin in every direction of 10px
+    and font weight bold and color of green and background color of hotpink<br />
+    <script>
+      const test = document.querySelector("h1");
+      const checkboxes = document.querySelectorAll("input[type=checkbox]");
+      checkboxes.forEach((checkbox) =>
+        checkbox.addEventListener("change", (e) => {
+          test.classList.add(e.target.value);
+        })
+      );
+
+      //   test.classlist.add("checkbox1");
+      //   test.classlist.add("checkbox1");
+      //   test.classlist.add("checkbox1");
+    </script>
+  </body>
+</html>
