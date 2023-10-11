@@ -31,7 +31,12 @@
       const checkboxes = document.querySelectorAll("input[type=checkbox]");
       checkboxes.forEach((checkbox) =>
         checkbox.addEventListener("change", (e) => {
-          test.classList.add(e.target.value);
+          if (e.target.checked) {
+            //this. = e.target when using Function(e) instead of =>
+            test.classList.add(e.target.value);
+          } else {
+            test.classList.remove(e.target.value);
+          }
         })
       );
 
