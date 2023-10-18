@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ball Dont Lie API Classwork</title>
+  </head>
+  <body>
+    <script>
+      const confToDiv = {}; //Key is conference, value is array of divisions
+      const divToTeam = {}; //Key is Division, value is array of teams
+      fetch("https://www.balldontlie.io/api/v1/teams")
+        .then((response) => response.json())
+        .then((json) => {
+          //   console.log(json.data);
+          for (let item in json.data) {
+            // confToDiv[item.conference];
+          }
+        });
+    </script>
+  </body>
+</html>
