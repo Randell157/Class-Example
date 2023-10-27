@@ -6,6 +6,12 @@
     <title>Ball Dont Lie API Classwork</title>
   </head>
   <body>
+    <label>Choose a conference</label>
+    <select id="conference"></select>
+    <br />
+    <label>Choose a division</label>
+    <select id="division"></select>
+
     <script>
       const confToDiv = {}; //Key is conference, value is array of divisions
       const divToTeam = {}; //Key is Division, value is array of teams
@@ -13,8 +19,24 @@
         .then((response) => response.json())
         .then((json) => {
           //   console.log(json.data);
-          for (let item in json.data) {
-            // confToDiv[item.conference];
+          for (let item of json.data) {
+            if (item.conference in confToDiv) {
+              const divisions = confToDiv[item.conference];
+              divisions.add(item.division);
+            } else {
+              const newSet = new Set();
+              newSet.add(item.division);
+              confToDiv[item.conference] = newSet;
+            }
+
+            if (item.division in divToTeam) {
+              const teams = divToTeam[item.division];
+              teams.add(item.full_name);
+            } else {
+              const newSet = new Set();
+              newSet.add(item.division);
+              divToTeam[item.division] = newSet;
+            }
           }
         });
     </script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .valis {
+        border: 2px solid green;
+      }
+      .invalid {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" />
+    <script>
+      document.querySelector("input").addEventListener("keyup", (event) => {
+        const pattern = /[Hh]appy/;
+        if (pattern.test(event.currentTarget.value)) {
+          event.currentTarget.className = "valid";
+          console.log("true");
+        } else {
+          event.currentTarget.className = "invalid";
+          console.log("false");
+        }
+      });
+    </script>
+  </body>
+</html>
