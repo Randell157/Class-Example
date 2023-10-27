@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .valis {
+      .valid {
         border: 2px solid green;
       }
       .invalid {
@@ -15,7 +15,19 @@
   </head>
   <body>
     <input type="text" />
+    <input
+      type="color"
+      id="favColor"
+      onchange="(() => {
+      const color = event.currentTarget.value;
+      localStorage.myColor = event.currentTarget.value;
+      document.body.style.background = color;
+    })()"
+    />
+
     <script>
+      document.body.style.background = localStorage.myColor;
+      document.querySelector("input").value = localStorage.myKey;
       document.querySelector("input").addEventListener("keyup", (event) => {
         const pattern = /[Hh]appy/;
         if (pattern.test(event.currentTarget.value)) {
@@ -25,7 +37,9 @@
           event.currentTarget.className = "invalid";
           console.log("false");
         }
+        localStorage.myKey = event.currentTarget.value;
       });
+      document.getElementById("favColor").value = localStorage.colorKey;
     </script>
   </body>
 </html>
